@@ -5,7 +5,7 @@ require_once './data/ConnexionAuthentification.classe.php';
 /**
  * Classe de récupération des infos d'authentification présentes
  * dans la Bd.
- * @author Claude
+ * @author Emile
  */
 class GetAuth extends Authentification {
 

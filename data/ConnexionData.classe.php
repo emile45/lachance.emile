@@ -1,7 +1,7 @@
 <?php
 /**
  * Classe de récupération de la connexion sur une base de données.
- * @author Claude
+ * @author Emile
  */
 require_once 'Connexion.abstract.php';
 require_once './data/config.inc.php';

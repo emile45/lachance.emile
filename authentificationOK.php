@@ -4,7 +4,7 @@
  * de l'envoi de la réponse.
  */
 
-require_once './auth.session.php';
+require_once './session/auth.session.php';
     
     if (getSessionExiste()){
         $nom = $_SESSION['infoAuth'];

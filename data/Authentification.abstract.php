@@ -5,7 +5,7 @@ require_once './data/ConnexionAuthentification.classe.php';
 /**
  * Description de Authentification
  * Classe de récupération des crédentiels d'un usager.
- * @author Claude
+ * @author Emile
  */
 abstract class Authentification {
     protected $pwd;
