@@ -37,7 +37,7 @@ require_once './auth.session.php';
                 <!-- Header -->
                     <header id="header">
                         <h1>Gestionn-R</h1>
-                        <p>Mon outil intégré de gestion de présences</p>
+                        <h3>Bonjour,</h3><p id="nomUser"><?php echo $nom;?></p>
                     </header>
 
                 <!-- Main -->
@@ -51,13 +51,16 @@ require_once './auth.session.php';
                                 </div>
 
                                 <form method="post" action="./ajoutLieu.redirect.php" id="ajoutLieu" style="display:none">
+                                    <p>Nom du lieu</p>
                                     <div class="col-12" style="padding-bottom: 5%">
                                         <input type="text" name="nomLieu" id="nomLieu" placeholder="Nom du lieu" />
                                     </div>
+                                    <p>Numéro civique</p>
                                     <div class="col-6 col-12-xsmall" style="padding-bottom: 5%">
                                         <input type="text" name="numCivique" id="numCivique" placeholder="Numéro civique" />
                                     </div>
-                                    <div class="col-6 col-12-xsmall" style="padding-bottom: 5%">
+                                    <p>Nom de la rue</p>
+                                    <div class="col-6 col-12-xsmall" style="padding-bottom: 10%">
                                         <input type="text" name="nomRue" id="nomRue" placeholder="Rue" />
                                     </div>
                                     <div class="col-12" style="padding-bottom: 5%">
@@ -75,15 +78,16 @@ require_once './auth.session.php';
                                             <option value="Terre-Neuve et Labrador">Terre-Neuve et Labrador</option>
                                         </select>
                                     </div>
+                                    <p>Nom de la ville</p>
                                     <div class="col-6 col-12-xsmall" style="padding-bottom: 5%">
                                         <input type="text" name="nomVille" id="nomVille" placeholder="Ville" />
                                     </div>
                                     <p>Date et temps d'arrivé format (AAAA/MM/JJ/HH/MM)</p>
-                                    <div class="col-6 col-12-xsmall">
+                                    <div class="col-6 col-12-xsmall" style="padding-bottom: 5%">
                                         <input type="text" name="dateArr" id="dateArr" placeholder="Date" />
                                     </div>
                                     <p>Date et temps de départ (AAAA/MM/JJ/HH/MM)</p>
-                                    <div class="col-6 col-12-xsmall">
+                                    <div class="col-6 col-12-xsmall" style="padding-bottom: 5%">
                                         <input type="text" name="dateDep" id="dateDep" placeholder="Date" />
                                     </div>
                                     <button class="button large">Ajout</button>
@@ -96,11 +100,11 @@ require_once './auth.session.php';
 
                                     echo $liste->getListe($nom);
                                  ?>
-                                <div class="col-6 col-12-small">
-                                    <input type="checkbox" id="covidCheck" name="covidCheck" class="checkSatis" onchange="">
-                                    <label for="q9-1">Écran du prof en vidéo, et l’audio</label>
+                                <div class="col-6 col-12-small" style="padding-top: 5%;">
+                                    <input type="checkbox" id="covidCheck" name="covidCheck" class="checkBx" value="1" onchange="onCovidCheck()">
+                                    <label for="covidCheck">J'avais la covid lors de cette visite.</label>
                                 </div>
-
+                                <button type="button" class="button large" id="btnCovid" onclick="ajaxCovid()" style="display:none">Confirmer la pathologie</button>
                             </section>
 
                     </div>
@@ -121,6 +125,6 @@ require_once './auth.session.php';
             <script src="assets/js/util.js"></script>
             <script src="assets/js/main.js"></script>
             <script src="assets/js/ajoutLieu.js"></script>
-            <script src="assets/js/btnCovid.js"></script>
+            <script src="assets/js/buttonCovid.js"></script>
     </body>
 </html>

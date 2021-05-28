@@ -23,7 +23,7 @@ class listeLieuxHTML extends listeLieux {
 
         $affiche = $lieu->nom;
         $affiche .= $lieu->tempsArrive; 
-        $html = "<select name='Lieux'>";
+        $html = "<select name='updownLieux' id='updownLieux'>";
         while($lieu = $this->liste->fetch(PDO::FETCH_OBJ)){
             $html .= "<option value='".$lieu->nom."'>".$lieu->nom." ".$lieu->tempsArrive."</option>";
         }
@@ -32,16 +32,5 @@ class listeLieuxHTML extends listeLieux {
         return $html;
     }
 
-    public function getLieuById($id)
-    {
-        $this->selectByid($id);
-        $fleur = $this->liste->fetchObject();
-
-        $html  = "<p>";
-        $html .= $fleur->nom;
-        $html .= "</p>";
-
-        return $html;
-    }
 
 }

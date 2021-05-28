@@ -11,7 +11,6 @@ abstract class listeLieux {
     protected $connexion;
     
     abstract public function getListe($user);
-    abstract public function getLieuById($id);
 
     protected function selectToutes($user)
     {
@@ -29,19 +28,4 @@ abstract class listeLieux {
     }
 
 
-    protected function selectById($id)
-    {
-        try {
-            $this->liste = $this->connexion->prepare("select * from fleurs where id=:id");
-
-            $this->liste->bindParam(":id",$id,PDO::PARAM_INT);
-    
-            //La requête complétée, avec une valeur sur la variable, est passée au
-            // serveur de bd, sur le schéma.
-            $this->liste->execute();
-
-        } catch (Exception $e){
-            error_log($e->getMessage());
-        }
-    }
 }
