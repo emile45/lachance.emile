@@ -37,7 +37,7 @@
                                 <form name="auth" action="./auth.redirect.php" method="post">
                             <?php
                                 if (isset($erreurAuth)){
-                                    echo '<p style="background-color: yellow;">'.$erreurAuth.'</p>';
+                                    echo '<p style="background-color: red;">'.$erreurAuth.'</p>';
                                 }
                             ?>          
                                     <input type="text" name="nom" placeholder="Nom d'usager">

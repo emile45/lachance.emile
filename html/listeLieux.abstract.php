@@ -16,9 +16,9 @@ abstract class listeLieux {
     protected function selectToutes($user)
     {
         try {
-            $this->liste = $this->connexion->prepare("SELECT nom, tempsArrive FROM lachan_tp4.lieux WHERE utilisateur=:user");
+            $this->liste = $this->connexion->prepare("SELECT * FROM lieux WHERE utilisateur=:user");
 
-            $this->liste->bindParam(":user",$user,PDO::PARAM_INT);
+            $this->liste->bindParam(":user",$user,PDO::PARAM_STR);
             //La requête complétée, avec une valeur sur la variable, est passée au
             // serveur de bd, sur le schéma.
             $this->liste->execute();
